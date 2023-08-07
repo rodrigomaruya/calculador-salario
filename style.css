@@ -1,0 +1,72 @@
+*{
+    margin: 0px;
+    
+}
+
+img{
+    display: block;
+    margin: 0px auto;
+}
+header{
+    color: white;
+    font-family:  'Courier New', Courier, monospace;
+    height: 200px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.384);
+    background-image: linear-gradient(to right,rgb(3, 214, 3),rgb(1, 90, 1))    
+}
+h1{
+    text-align: center;
+    padding-top: 5px;
+}
+p{
+    font-family: 'Courier New', Courier, monospace;
+}
+.p1{
+    margin-top: 25px;
+}
+div{
+    margin-top: 10px;
+    display: flex;
+    margin: auto;
+    padding: 15px;
+}
+main{
+    font-family:'Courier New', Courier, monospace;
+    min-width: 300px;
+    max-width: 800px;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    font-size: 1em;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.568);
+
+}
+label{
+    width: 230px;
+    height: 25px;
+}
+input{
+    width: 60px;
+    cursor: pointer;
+}
+button{
+    margin: auto;
+    height: 50px;
+    cursor: pointer;
+}
+#res{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin:35px 0;
+}
+footer{
+    font-size: 1.5em;
+    font-family: Tangerine;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.384);
+    background-image: linear-gradient(to right,rgb(3, 214, 3),rgb(1, 90, 1))  
+}

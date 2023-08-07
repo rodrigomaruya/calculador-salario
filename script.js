@@ -28,7 +28,7 @@ bnt_Cal.addEventListener('click',((evt)=>{
     d_trab.value=''
     n_trab.value=''
     h_extra.value=''
-    valor_hora.focus()
+    
 }))
 
     

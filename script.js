@@ -49,6 +49,7 @@ bnt_Cal.addEventListener('click',((evt)=>{
     d_trab.value=''
     n_trab.value=''
     h_extra.value=''
+    
 }))
 imp.addEventListener('click',()=>{
     const log=document.getElementById('log').innerHTML

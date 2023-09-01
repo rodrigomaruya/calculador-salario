@@ -37,7 +37,7 @@ bnt_Cal.addEventListener('click',((evt)=>{
     const FY=tSal.toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
     p1.innerHTML=`Mês: <strong>${mes.value}</strong>`
     p2.innerHTML=`Valor por hora de trabalhado:<strong> &yen${valor_hora.value}</strong>`
-    p3.innerHTML=`Total de dias trabalhado: ${d_trab.value} = <strong>${TdiaT.toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' })}</strong>`
+    p3.innerHTML=`Total de dias trabalhado:${d_trab.value} = <strong>${TdiaT.toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' })}</strong>`
     p4.innerHTML=`Total de noite: ${n_trab.value} = <strong>${tNoite.toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' })}</strong>`
     p5.innerHTML=`Total hora extra: ${h_extra.value} = <strong>${tHe.toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' })}</strong>`
     p6.innerHTML=`<strong><p>Total salário ${FY}</strong></P>`   

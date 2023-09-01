@@ -18,11 +18,16 @@ h1{
     text-align: center;
     padding-top: 5px;
 }
-p{
-    font-family: 'Courier New', Courier, monospace;
+
+#mese{
+    margin: 15px;
 }
-.p1{
-    margin-top: 25px;
+#mes{
+    margin-top: 5px;
+}
+.p{
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 10px;
 }
 div{
     margin-top: 10px;
@@ -34,12 +39,12 @@ main{
     font-family:'Courier New', Courier, monospace;
     min-width: 300px;
     max-width: 800px;
-    height: 100vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     margin: auto;
     border: 1px solid rgba(0, 0, 0, 0.288);
-    font-size: 1em;
+    font-size: .90em;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.568);
 
 }
@@ -47,12 +52,21 @@ label{
     width: 230px;
     height: 25px;
 }
+
 input{
-    width: 60px;
+    width: 65px;
+    height: 22px;
     cursor: pointer;
 }
+.bnt{
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+button:hover{
+    outline: 1px solid red;
+}
 button{
-    margin: auto;
     height: 50px;
     cursor: pointer;
 }

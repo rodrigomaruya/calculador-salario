@@ -7,6 +7,18 @@ const bnt_Cal=document.getElementById('bnt_Cal')
 const mes=document.getElementById('mes')
 const imp=document.getElementById('imp')
 const conteudo3=document.getElementById("conteudo3")
+let janeiro=0
+let fevereiro=0
+let marco=0
+let abril=0
+let maio=0
+let junho=0
+let julho=0
+let agosto=0
+let setembro=0
+let outubro=0
+let novembro=0
+let dezembro
 
 const p1=document.createElement('p')
 p1.setAttribute('class','p')
@@ -59,19 +71,19 @@ const somarSalario=()=>{
   }
  
 const ctx = document.getElementById('myChart');
-let janeiro=localStorage.getItem("janeiro")
-let fevereiro=localStorage.getItem("fevereiro")
-let marco=localStorage.getItem("marco")
-let abril=localStorage.getItem("abril")
-let maio=localStorage.getItem("maio")
-let junho=localStorage.getItem("junho")
-let julho=localStorage.getItem("julho")
-let agosto=localStorage.getItem("agosto")
-let setembro=localStorage.getItem("setembro")
-let outubro=localStorage.getItem("outubro")
-let novembro=localStorage.getItem("novembro")
-let dezembro=localStorage.getItem("dezembro")
-let grafico=null
+ janeiro=localStorage.getItem("janeiro")
+ fevereiro=localStorage.getItem("fevereiro")
+ marco=localStorage.getItem("marco")
+ abril=localStorage.getItem("abril")
+ maio=localStorage.getItem("maio")
+ junho=localStorage.getItem("junho")
+ julho=localStorage.getItem("julho")
+ agosto=localStorage.getItem("agosto")
+ setembro=localStorage.getItem("setembro")
+ outubro=localStorage.getItem("outubro")
+ novembro=localStorage.getItem("novembro")
+ dezembro=localStorage.getItem("dezembro")
+ grafico=null
 
 grafico=new Chart(ctx, {
   type: 'bar',
@@ -93,18 +105,18 @@ grafico=new Chart(ctx, {
 });
 
 const obterDados=()=>{
-  document.getElementById("janeiro").innerHTML="Janeiro: "+parseInt(janeiro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
-  document.getElementById("fevereiro").innerHTML="fevereiro: "+parseInt(fevereiro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
-  document.getElementById("marco").innerHTML="Março: "+parseInt(marco).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
-  document.getElementById("abril").innerHTML="Abril: "+parseInt(abril).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
-  document.getElementById("maio").innerHTML="Maio: "+parseInt(maio).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
-  document.getElementById("junho").innerHTML="Junho: "+parseInt(junho).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
-  document.getElementById("julho").innerHTML="Julho: "+parseInt(julho).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
-  document.getElementById("agosto").innerHTML="Agosto: "+parseInt(agosto).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
-  document.getElementById("setembro").innerHTML="Setembro: "+parseInt(setembro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
-  document.getElementById("outubro").innerHTML="Outubro: "+parseInt(outubro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
-  document.getElementById("novembro").innerHTML="Novembro: "+parseInt(novembro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
-  document.getElementById("dezembro").innerHTML="Dezembro: "+parseInt(dezembro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("janeiro").innerHTML="Janeiro: "+Number(janeiro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("fevereiro").innerHTML="fevereiro: "+Number(fevereiro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("marco").innerHTML="Março: "+Number(marco).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("abril").innerHTML="Abril: "+Number(abril).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("maio").innerHTML="Maio: "+Number(maio).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("junho").innerHTML="Junho: "+Number(junho).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("julho").innerHTML="Julho: "+Number(julho).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("agosto").innerHTML="Agosto: "+Number(agosto).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("setembro").innerHTML="Setembro: "+Number(setembro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("outubro").innerHTML="Outubro: "+Number(outubro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("novembro").innerHTML="Novembro: "+Number(novembro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("dezembro").innerHTML="Dezembro: "+Number(dezembro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
   
 }
 obterDados()
@@ -133,4 +145,28 @@ bnt_Cal.addEventListener('click',((evt)=>{
   setTimeout(reiniciar,5000)
 }))
 
+const btn_editar=document.getElementById("btn_editar")
+const n_mes=document.getElementById("n_mes")
+const editar=()=>{
+  let edita_mes=document.getElementById("f_mes").value
+  let i_mes=n_mes.value
+  localStorage.setItem(edita_mes,i_mes)
+  document.getElementById("janeiro").innerHTML="Janeiro: "+Number(janeiro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("fevereiro").innerHTML="fevereiro: "+Number(fevereiro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("marco").innerHTML="Março: "+Number(marco).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("abril").innerHTML="Abril: "+Number(abril).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("maio").innerHTML="Maio: "+Number(maio).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("junho").innerHTML="Junho: "+Number(junho).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("julho").innerHTML="Julho: "+Number(julho).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("agosto").innerHTML="Agosto: "+Number(agosto).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("setembro").innerHTML="Setembro: "+Number(setembro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("outubro").innerHTML="Outubro: "+Number(outubro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("novembro").innerHTML="Novembro: "+Number(novembro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+  document.getElementById("dezembro").innerHTML="Dezembro: "+Number(dezembro).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+}
+btn_editar.addEventListener("click",()=>{
+  editar()
+  setTimeout(reiniciar,2000)
+
+})
     

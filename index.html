@@ -38,6 +38,7 @@
                     <option value="maio">Maio</option>
                     <option value="junho">Junho</option>
                     <option value="julho">Julho</option>
+                    <option value="agosto">Agosto</option>
                     <option value="setembro">Setembro</option>
                     <option value="outubro">Outubro</option>
                     <option value="novembro">Novembro</option>
@@ -58,6 +59,7 @@
             </div>
         </div>
     </section>
+
     <div class="corpoBtn">
         <button id="bnt_Cal" class="btn">Calcular</button>
         <button id="imp" class="btn">Imprimir</button>
@@ -68,6 +70,31 @@
     <div id="grafico" class="grafico">
         <canvas id="myChart"></canvas>
     </div>
+    
+    <div class="corpo_editar">
+        <div class="editar">Mês</div>
+        <div class="conteudo2">
+            <select name="f_mes" id="f_mes">
+                <option value="selecione">Selecione</option>
+                <option value="janeiro">Janeiro</option>
+                <option value="fevereiro">Fevereiro</option>
+                <option value="marco">Março</option>
+                <option value="abril">Abril</option>
+                <option value="maio">Maio</option>
+                <option value="junho">Junho</option>
+                <option value="julho">Julho</option>
+                <option value="agosto">Agosto</option>
+                <option value="setembro">Setembro</option>
+                <option value="outubro">Outubro</option>
+                <option value="novembro">Novembro</option>
+                <option value="dezembro">Dezembro</option>
+            </select>
+        </div>
+        <div class="editar">Salario</div>
+        <input type="number" name="n_mes" id="n_mes" class="i_editar">
+        <div id="btn_editar" class="btn_editar">Editar</div>
+    </div>
+        
     <div id="tabela" class="tabela">
         <div class="mes meses1">
             <p id="janeiro" class="linha"></p>
@@ -86,6 +113,7 @@
             <p id="dezembro" class="linha"></p>
         </div>
     </div>
+
 </main>
     <footer>&copy;Rod999</footer>
     <script src="script.js"></script>      

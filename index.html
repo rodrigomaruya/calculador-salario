@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculador de Saláro</title>
+    <title>Calculador de Salário</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Tangerine&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header id="log">
@@ -18,26 +19,73 @@
         </picture>
     </header>
 <main>
-    <section>  
-        <label id="mese">Mês</label><input type="text" name="mes" id="mes">
-        <div class="p1"><label >Valor da hora &yen;</label>
-            <input type="number" name="valor_hora" id="valor_hora">
+    <section class="corpo">  
+        <div class="linhaTitulo" >
+            <div id="mese" class="conteudo">Mês</div>
+            <div class="conteudo">Valor da hora &yen;</div>
+            <div class="conteudo">Total de dias trabalhado(8 horas)</div>
+            <div class="conteudo">Noites Trabalhadas</div>
+            <div class="conteudo">Total horas extras</div>
         </div>
-        <div> <label >Total de dias trabalhado(8 horas)</label>
-            <input type="number" name="d_trab" id="d_trab">
-        </div>
-        <div><label >Noites Trabalhadas</label>
-            <input type="number" name="n_trab" id="n_trab">
-        </div>
-        <div><label >Total horas extras</label>
-            <input type="number" name="h_extra" id="h_extra">
-        </div>
-        <div class="bnt">
-            <button id="bnt_Cal">Calcular</button>
-            <button id="imp">Imprimir</button>
+        <div class="corpoInput"> 
+            <div class="conteudo1">
+                <select name="f_select" id="f_select">
+                    <option value="selecione">Selecione</option>
+                    <option value="janeiro">Janeiro</option>
+                    <option value="fevereiro">Fevereiro</option>
+                    <option value="marco">Março</option>
+                    <option value="abril">Abril</option>
+                    <option value="maio">Maio</option>
+                    <option value="junho">Junho</option>
+                    <option value="julho">Julho</option>
+                    <option value="setembro">Setembro</option>
+                    <option value="outubro">Outubro</option>
+                    <option value="novembro">Novembro</option>
+                    <option value="dezembro">Dezembro</option>
+                </select>
+            </div>
+            <div class="conteudo1">
+                <input type="number" name="valor_hora" id="valor_hora">
+            </div>
+            <div class="conteudo1">
+                <input type="number" name="d_trab" id="d_trab">
+            </div>
+            <div class="conteudo1">
+                <input type="number" name="n_trab" id="n_trab">
+            </div>
+            <div class="conteudo1">
+                <input type="number" name="h_extra" id="h_extra">
+            </div>
         </div>
     </section>
-        <div id="res"></div>
+    <div class="corpoBtn">
+        <button id="bnt_Cal" class="btn">Calcular</button>
+        <button id="imp" class="btn">Imprimir</button>
+    </div>
+    <div id="res" class="corpoRes">
+        <div id="conteudo3" class="conteudo3"></div>
+    </div>
+    <div id="grafico" class="grafico">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div id="tabela" class="tabela">
+        <div class="mes meses1">
+            <p id="janeiro" class="linha"></p>
+            <p id="fevereiro" class="linha"></p>
+            <p id="marco" class="linha"></p>
+            <p id="abril" class="linha"></p>
+            <p id="maio" class="linha"></p>
+            <p id="junho" class="linha"></p>
+        </div>   
+        <div class="mes meses2">
+            <p id="julho" class="linha"></p>
+            <p id="agosto" class="linha"></p>
+            <p id="setembro" class="linha"></p>
+            <p id="outubro" class="linha"></p>
+            <p id="novembro" class="linha"></p>
+            <p id="dezembro" class="linha"></p>
+        </div>
+    </div>
 </main>
     <footer>&copy;Rod999</footer>
     <script src="script.js"></script>      

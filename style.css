@@ -31,6 +31,7 @@ main{
     flex-direction: column;
     margin: auto;
 }
+
 .corpo{
     margin: 5px;
     display: flex;
@@ -73,13 +74,51 @@ main{
     width: 100%;
     margin: 2px;
 }
+.corpoRes{
+    visibility: hidden;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:  rgba(0,0,0,0.50);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+}
+
+.conteudo4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 300px;
+    /* border: 1px solid red; */
+}    
 .conteudo3{
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    font-size: .90rem;
-    margin: 5px;
+    background-color: #eee;
+    font-size: .80rem;
+    border-radius: 5px 5px 0px 0px;
+    width: 100%;
+    height: 300px;
+    /* border: 1px solid red; */
+}
+.btn_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    border-radius: 0px 0px 5px 5px;
+    background-color:rgba(0, 150, 0, 0.747);
+
 }
 .p{
     padding: 5px;
@@ -103,20 +142,19 @@ input{
 }
 .btn{
     border-radius: 10px;
+    background-color:rgba(0, 150, 0, 0.747);
+    color: #eee;
+    width: 100px;
+    height: 30px;
+}
+.btn1{
+    border-radius: 10px;
+    background-color:#eee;
+    color: rgba(0, 150, 0, 0.747);;
     width: 100px;
     height: 30px;
 }
 
-button{
-    height: 50px;
-    cursor: pointer;
-}
-.corpoRes{
-    margin: 5px;
-    width: inherit;
-    height: 180px;
-    
-}
 .corpo_editar{
     display: flex;
     justify-content: center;
@@ -141,6 +179,7 @@ button{
 .btn_editar{
     margin-left: 5px;
     background-color: #eee;
+    color: rgba(0, 150, 0, 0.747); 
     border-radius: 5px;
 }
 label{
@@ -148,7 +187,7 @@ label{
 }
 .tabela{
     width: inherit;
-    height: 250px;
+    height: 200px;
     display: flex;
     justify-content: center;
     font-size: .79rem;

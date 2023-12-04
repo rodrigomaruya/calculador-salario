@@ -6,7 +6,7 @@ const res=document.getElementById('res')
 const bnt_Cal=document.getElementById('bnt_Cal')
 const mes=document.getElementById('mes')
 const imp=document.getElementById('imp')
-const conteudo3=document.getElementById("conteudo3")
+
 let janeiro=0
 let fevereiro=0
 let marco=0
@@ -18,73 +18,111 @@ let agosto=0
 let setembro=0
 let outubro=0
 let novembro=0
-let dezembro
+let dezembro=0
 
-const p1=document.createElement('p')
-p1.setAttribute('class','p')
-conteudo3.appendChild(p1)
-const p2=document.createElement('p')
-p2.setAttribute('class','p')
-conteudo3.appendChild(p2)
-const p3=document.createElement('p')
-p3.setAttribute('class','p')
-conteudo3.appendChild(p3)
-const p4=document.createElement('p')
-p4.setAttribute('class','p')
-conteudo3.appendChild(p4)
-const p5=document.createElement('p')
-p5.setAttribute('class','p')
-conteudo3.appendChild(p5)
-const p6=document.createElement('p')
-p6.setAttribute('class','p')
-conteudo3.appendChild(p6)
+const janelaPopup=()=>{
+  res.style.visibility="visible"
+  const f_select=document.getElementById("f_select").value
 
-res.appendChild(conteudo3)
+  const conteudo4=document.createElement("div")
+  conteudo4.setAttribute("class","conteudo4")
+  res.appendChild(conteudo4)
+
+  const conteudo3=document.createElement("div")
+  conteudo3.setAttribute("class","conteudo3")
+  conteudo4.appendChild(conteudo3)
+
+  const btn_footer=document.createElement("div")
+  btn_footer.setAttribute("class","btn_footer")
+  conteudo4.appendChild(btn_footer)
+
+  const btn_gravar=document.createElement("button")
+  btn_gravar.setAttribute("class","btn1")
+  btn_gravar.setAttribute("id","btn_gravar")
+  btn_gravar.addEventListener("click",()=>{
+    localStorage.setItem(f_select,sSal)
+    reiniciar()
+  })
+  btn_gravar.innerHTML="Gravar"
+  btn_footer.appendChild(btn_gravar)
+
+  const btn_cancelar=document.createElement("button")
+  btn_cancelar.setAttribute("class","btn1")
+  btn_cancelar.setAttribute("id","btn_cancelar")
+  btn_cancelar.addEventListener("click",()=>{
+    reiniciar()
+  })
+  btn_cancelar.innerHTML="Cancelar"
+  btn_footer.appendChild(btn_cancelar)
+
+  const p1=document.createElement('p')
+  p1.setAttribute('class','p')
+  conteudo3.appendChild(p1)
+  const p2=document.createElement('p')
+  p2.setAttribute('class','p')
+  conteudo3.appendChild(p2)
+  const p3=document.createElement('p')
+  p3.setAttribute('class','p')
+  conteudo3.appendChild(p3)
+  const p4=document.createElement('p')
+  p4.setAttribute('class','p')
+  conteudo3.appendChild(p4)
+  const p5=document.createElement('p')
+  p5.setAttribute('class','p')
+  conteudo3.appendChild(p5)
+  const p6=document.createElement('p')
+  p6.setAttribute('class','p')
+  conteudo3.appendChild(p6)
+  
+  const horaE=valor_hora.value/10*2.5
+  const somaExt=horaE+ Number(valor_hora.value)
+  const TdiaT=d_trab.value*8*valor_hora.value
+  const tNoite=n_trab.value*6.5*horaE 
+  const tHe=h_extra.value*somaExt 
+  const tSal=TdiaT+tNoite+tHe
+  const sSal=TdiaT+tNoite+tHe
+  const FY= Number(tSal).toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
+
+  console.log(horaE)
+
+  p1.innerHTML=`Mês: <strong>${f_select.toUpperCase()}</strong>`
+  p2.innerHTML=`Valor por hora de trabalhado:<strong> &yen${valor_hora.value}</strong>`
+  p3.innerHTML=`Referente a ${d_trab.value} dias : <strong>${TdiaT.toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' })}</strong>`
+  p4.innerHTML=`Total de noite: ${n_trab.value} : <strong>${tNoite.toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' })}</strong>`
+  p5.innerHTML=`Total hora extra: ${h_extra.value} : <strong>${tHe.toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' })}</strong>`
+  p6.innerHTML=`<strong><p>Total salário ${FY}</strong></P>`
+
+}
 
 const somarSalario=()=>{
   const f_select=document.getElementById("f_select").value
     if(valor_hora.value=='' || f_select=="selecione"){  
         alert('Por favor insira o Valor da hora e Selecione o mês')
     }else{
-        const horaE=valor_hora.value/10*2.5
-        const somaExt=horaE+ Number(valor_hora.value)
-        const TdiaT=d_trab.value*8*valor_hora.value
-        const tNoite=n_trab.value*6.5*horaE 
-        const tHe=h_extra.value*somaExt 
-        const tSal=TdiaT+tNoite+tHe
-        const sSal=TdiaT+tNoite+tHe
-        const FY=tSal.toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' });
-
-        p1.innerHTML=`Mês: <strong>${f_select.toUpperCase()}</strong>`
-        p2.innerHTML=`Valor por hora de trabalhado:<strong> &yen${valor_hora.value}</strong>`
-        p3.innerHTML=`Referente a ${d_trab.value} dias : <strong>${TdiaT.toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' })}</strong>`
-        p4.innerHTML=`Total de noite: ${n_trab.value} : <strong>${tNoite.toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' })}</strong>`
-        p5.innerHTML=`Total hora extra: ${h_extra.value} : <strong>${tHe.toLocaleString('yen-JP', { style: 'currency', currency: 'JPY' })}</strong>`
-        p6.innerHTML=`<strong><p>Total salário ${FY}</strong></P>`
-
-        localStorage.setItem(f_select,sSal)   
+      janelaPopup()
+              
     }
     valor_hora.value=''
     d_trab.value=''
     n_trab.value=''
     h_extra.value=''
   }
- 
+    janeiro=localStorage.getItem("janeiro")
+    fevereiro=localStorage.getItem("fevereiro")
+    marco=localStorage.getItem("marco")
+    abril=localStorage.getItem("abril")
+    maio=localStorage.getItem("maio")
+    junho=localStorage.getItem("junho")
+    julho=localStorage.getItem("julho")
+    agosto=localStorage.getItem("agosto")
+    setembro=localStorage.getItem("setembro")
+    outubro=localStorage.getItem("outubro")
+    novembro=localStorage.getItem("novembro")
+    dezembro=localStorage.getItem("dezembro")
+  
+  let grafico=null
+  
 const ctx = document.getElementById('myChart');
- janeiro=localStorage.getItem("janeiro")
- fevereiro=localStorage.getItem("fevereiro")
- marco=localStorage.getItem("marco")
- abril=localStorage.getItem("abril")
- maio=localStorage.getItem("maio")
- junho=localStorage.getItem("junho")
- julho=localStorage.getItem("julho")
- agosto=localStorage.getItem("agosto")
- setembro=localStorage.getItem("setembro")
- outubro=localStorage.getItem("outubro")
- novembro=localStorage.getItem("novembro")
- dezembro=localStorage.getItem("dezembro")
- grafico=null
-
 grafico=new Chart(ctx, {
   type: 'bar',
   data: {
@@ -142,7 +180,8 @@ const reiniciar=()=>{
 }
 bnt_Cal.addEventListener('click',((evt)=>{
   somarSalario()
-  setTimeout(reiniciar,5000)
+  // res.style.visibility="visible"
+  //setTimeout(reiniciar,5000)
 }))
 
 const btn_editar=document.getElementById("btn_editar")
@@ -166,7 +205,7 @@ const editar=()=>{
 }
 btn_editar.addEventListener("click",()=>{
   editar()
-  setTimeout(reiniciar,2000)
+  reiniciar()
 
 })
     
